@@ -13,7 +13,7 @@ const App = () => {
   return React.createElement("div", {}, [
     React.createElement("h1", {}, "Padre Gino's"),
     React.createElement(Pizza, {
-      name: "The pepperoni pizza",
+      name: "The pepperoni pizzsa",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.",
     }),
