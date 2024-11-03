@@ -1,9 +1,12 @@
+import React from "react";
+import { createRoot } from "react-dom";
+
 const Pizza = function (props) {
   return React.createElement("div", {}, [
     React.createElement(
       "h1",
       {},
-      props.name ? props.name : "oops... data is empty"
+      props.name ? props.name : "oops... data is empty",
     ),
     React.createElement("p", {}, props.description),
   ]);
@@ -37,5 +40,7 @@ const App = () => {
 };
 
 const container = document.getElementById("root");
-const root = ReactDOM.createRoot(container);
+// const root = ReactDOM.createRoot(container);
+const root = createRoot(container); //only get the createRoot function from the ReactDOM library
+//With this, there's no globals anymore. We dont use <script> to import react anymore, so is not available globally
 root.render(React.createElement(App));

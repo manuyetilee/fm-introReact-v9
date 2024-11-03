@@ -4,13 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
     "format": "prettier --write \"01-no-frills-react/**/*.{js,jsx,css,html}\"",
+    "lint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
+  "type": "module",
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.3",
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.11.0",
+    "prettier": "^3.3.3",
+    "vite": "^5.4.10"
+  },
   "dependencies": {
-    "prettier": "^3.3.3"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
