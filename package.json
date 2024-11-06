@@ -7,7 +7,7 @@
     "build": "vite build",
     "dev": "vite",
     "preview": "vite preview",
-    "format": "prettier --write \"01-no-frills-react/**/*.{js,jsx,css,html}\"",
+    "format": "prettier --write \"04-hooks/**/*.{js,jsx,css,html}\"",
     "lint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,8 +19,9 @@
     "@vitejs/plugin-react": "^4.3.3",
     "eslint": "^9.14.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.37.2",
     "globals": "^15.11.0",
-    "prettier": "^3.3.3",
+    "prettier": "3.3.3",
     "vite": "^5.4.10"
   },
   "dependencies": {
