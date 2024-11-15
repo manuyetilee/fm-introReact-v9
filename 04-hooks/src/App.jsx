@@ -4,7 +4,7 @@ import Order from "./Order";
 function App() {
   return (
     <div>
-      <h1>Padre Gino's</h1>
+      <h1 className="logo">Padre Gino's</h1>
       <Order />
     </div>
   );

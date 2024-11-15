@@ -45,11 +45,11 @@ export default function Order() {
   //Passing an empty array ensure it will run once, but passing a variable/s will make to run everytime that/those variable/s changes, ex:
   // by putting [pizzaSize], every time the user selects a different pizzaSize this useEffect will get run again
 
-  if (loading) {
-    //There's another, more conventional way to do this but this is ok too
-    //instead of replacing all the content with a loading message, we can just add a loading message into the component that is being loaded
-    return <h1>loading...</h1>;
-  }
+  // if (loading) {
+  //   //There's another, more conventional way to do this but this is ok too
+  //   //instead of replacing all the content with a loading message, we can just add a loading message into the component that is being loaded
+  //   return <h1>loading...</h1>;
+  // }
 
   return (
     <div className="order">
@@ -121,12 +121,18 @@ export default function Order() {
             </div>
           </div>
           <button type="submit">Add to Cart</button>
-          <div className="order-pizza">
-            <Pizza {...selectedPizza} />
-            <p>
-              <strong>{price}</strong>
-            </p>
-          </div>
+        </div>
+        <div className="order-pizza">
+          {loading ? (
+            <h3>loading...</h3>
+          ) : (
+            <>
+              <Pizza {...selectedPizza} />
+              <p>
+                <strong>{price}</strong>
+              </p>
+            </>
+          )}
         </div>
       </form>
     </div>
