@@ -12,7 +12,7 @@ import react from "@vitejs/plugin-react";
 
 // replace export
 export default defineConfig({
-  root: "04-hooks",
+  root: "06-custom-hooks",
   build: {
     outDir: "../dist",
   },

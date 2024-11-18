@@ -7,7 +7,7 @@
     "build": "vite build",
     "dev": "vite",
     "preview": "vite preview",
-    "format": "prettier --write \"04-hooks/**/*.{js,jsx,css,html}\"",
+    "format": "prettier --write \"06-custom-hooks/**/*.{js,jsx,css,html}\"",
     "lint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
