@@ -10,15 +10,15 @@ export default function Order() {
   const [pizzaData, setPizzaData] = useState([]);
   const [selectedPizza, setSelectedPizza] = useState("hawaiian");
   const [selectedSize, setSelectedSize] = useState("M");
-  const [cartList, setCartList] = useState([]);
+  const [cart, setCartList] = useState([]);
 
   //Here the loading validations
-  var selectedPizzaData, formatedPrice;
+  var selectedPizzaData, price;
   if (!loading) {
     selectedPizzaData = pizzaData.find((pizza) => {
       return selectedPizza == pizza.id;
     });
-    formatedPrice = formatPrice(selectedPizzaData.sizes[selectedSize]);
+    price = formatPrice(selectedPizzaData.sizes[selectedSize]);
   }
   //Here the data fetching
   async function fetchPizzaData() {
@@ -36,8 +36,8 @@ export default function Order() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ cartList }),
-    }); // Object destructuring: {cartList} same as {cartList:cartList}
+      body: JSON.stringify({ cart }),
+    }); // Object destructuring: {cart} same as {cart:cart}
     setCartList([]);
     setLoading(false);
   }
@@ -55,7 +55,7 @@ export default function Order() {
           action=""
           onSubmit={(e) => {
             e.preventDefault();
-            setCartList([...cartList, { ...selectedPizzaData, selectedSize, formatedPrice }]);
+            setCartList([...cart, { pizza: selectedPizzaData, size: selectedSize, price }]);
           }}
         >
           <div>
@@ -129,13 +129,13 @@ export default function Order() {
               <>
                 <Pizza {...selectedPizzaData} />
                 {/* Up there, a way to send parameters anonymously */}
-                <p>{formatedPrice}</p>
+                <p>{price}</p>
               </>
             )}
           </div>
         </form>
       </div>
-      <Cart cartList={cartList} checkout={checkout} />
+      <Cart cart={cart} checkout={checkout} />
     </div>
   );
 }
