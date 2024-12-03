@@ -12,7 +12,7 @@ import react from "@vitejs/plugin-react";
 
 // replace export
 export default defineConfig({
-  root: "06-custom-hooks",
+  root: "08-context-n-router",
   build: {
     outDir: "../dist",
   },
